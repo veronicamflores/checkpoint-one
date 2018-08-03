@@ -1,26 +1,26 @@
 let health = 100;
-
+let hits = 0;
 function slap(){
-
     health = health - 1;
-    alert(health);
+    hits++;
     upDate();
 }
 function punch(){
 
     health = health - 5;
-    alert(health);
+    hits++;
     upDate();
 }
 function kick(){
 
     health = health - 10;
-    alert(health);
+    hits++;
     upDate();
 }
 
 function upDate(){
     document.getElementById('health').innerText = health;
+    document.getElementById('hits').innerText = hits;
 }
 
 upDate();

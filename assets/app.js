@@ -1,36 +1,50 @@
 let target = {
     health: 100,
     hits: 0,
+    items: []
 }
+
+let items = {
+    fire:{name: 'Fire Hands', modifier: 2, description: 'its a slap'},
+    water: {name: 'Water Waves', modifier: 10, description: 'its a punch'},
+    lava: {name: 'Lava You Pretty Dead', modifier: 20, description: 'its a kick'
+    }
+}
+function giveItems(){
+    target['items'].push(items)
+}
+
+giveItems();
+
 function slap(){
-    health = health - 1;
-    hits++;
+    target.health = target.health - 1;
+    target.hits++;
     upDate();
 }
 function punch(){
 
-    health = health - 5;
-    hits++;
+    target.health = target.health - 5;
+    target.hits++;
     upDate();
 }
 function kick(){
 
-    health = health - 10;
-    hits++;
+    target.health = target.health - 10;
+    target.hits++;
     upDate();
 }
 
 function upDate(){
-    document.getElementById('health').innerText = health;
-    document.getElementById('hits').innerText = hits;
+    document.getElementById('health').innerText = target.health;
+    document.getElementById('hits').innerText = target.hits;
+}
+
+function addMods(arr){
+    let total = 0;
+    for (let i = 0; i < arr.length; i++) {
+        total = total + arr[1].modifier
+    }
+    return total
 }
 
 upDate();
-
-
-// let items = {
-//     slap:{name: 'slap', modifier: 1, description: 'its a slap'},
-//     punch: {name: 'punch', modifier: 5, description: 'its a punch'},
-//     kick: {name: 'slap', modifier: 10, description: 'its a kick'
-//     }
-// }

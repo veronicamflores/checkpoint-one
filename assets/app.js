@@ -1,5 +1,7 @@
-let health = 100;
-let hits = 0;
+let target = {
+    health: 100,
+    hits: 0,
+}
 function slap(){
     health = health - 1;
     hits++;
@@ -24,3 +26,11 @@ function upDate(){
 }
 
 upDate();
+
+
+// let items = {
+//     slap:{name: 'slap', modifier: 1, description: 'its a slap'},
+//     punch: {name: 'punch', modifier: 5, description: 'its a punch'},
+//     kick: {name: 'slap', modifier: 10, description: 'its a kick'
+//     }
+// }

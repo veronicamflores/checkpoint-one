@@ -10,6 +10,14 @@ let items = {
     lava: {name: 'Lava You Pretty Dead', modifier: 10, description: 'its a kick'
     }
 }
+function addMods(){
+    let total = 0;
+    for (let i = 0; i < target.items.length; i++) {
+        let item = target.items[i]
+        total += item[i].modifier
+    }
+    return total
+}
 
 function getItem(mod){
     if(mod == 'fire'){
@@ -20,30 +28,24 @@ function getItem(mod){
         target.items.push(items.lava);    } 
 }
 
+
 function slap(){
-    target.health -= (1 + addMods())
+    target.health -= 1 + addMods();
     target.hits++;
     upDate();
 }
 function punch(){
-    target.health -= (5 + addMods())
+    target.health -= 5 + addMods();
     target.hits++;
     upDate();
 }
 function kick(){
-    target.health -= (10 + addMods())
+    target.health -= 10 + addMods();
     target.hits++;
     upDate();
 }
 
-function addMods(){
-    let total = 0;
-    for (let i = 0; i < target.items.length; i++) {
-        let item = target.items[i]
-        total += item[i].modifier
-    }
-    return total
-}
+
 function upDate(){
     document.getElementById('health').innerText = target.health;
     document.getElementById('hits').innerText = target.hits;

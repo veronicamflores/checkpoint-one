@@ -10,15 +10,26 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row">
             <div class="col">
+                <h1>Health:
+                    <span id="health">_</span>
+                </h1>
+            </div>
+            <div class="col">
                 <img src="//placehold.it/200x200" alt="">
-                <button class="btn">Slap</button>
+            </div>
+            <div class="col">
+                <button class="btn" onclick="slap()">Slap</button>
+                <button class="btn" onclick="punch()">Punch</button>
+                <button class="btn" onclick="kick()">Kick</button>
             </div>
         </div>
     </div>
-<script src="assets/app.js"></script>
+    <script src="assets/app.js"></script>
 </body>
+
 </html>

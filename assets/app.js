@@ -10,26 +10,36 @@ let items = {
     lava: {name: 'Lava You Pretty Dead', modifier: 20, description: 'its a kick'
     }
 }
-function giveItems(){
-    target['items'].push(items)
+function getFire(){
+    target.items.push(items.fire)
+}
+function getWater(){
+    target.items.push(items.water)
+}
+function getLava(){
+    target.items.push(items.lava)
 }
 
-giveItems();
-
-function slap(){
-    target.health = target.health - 1;
+function damage(attack){
+    if(attack == 'slap'){
+        target.health = target.health - 1;
+    }else if(attack == 'punch'){
+        target.health = target.health - 5;
+    }else if(attack == 'kick'){
+    target.health = target.health - 10;
+    }
     target.hits++;
     upDate();
 }
 function punch(){
 
-    target.health = target.health - 5;
+   
     target.hits++;
     upDate();
 }
 function kick(){
 
-    target.health = target.health - 10;
+   
     target.hits++;
     upDate();
 }

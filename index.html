@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Slap Game</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
@@ -14,29 +15,55 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col">
+            <div class="col mb-4 mt-4">
+                <h1> Welcome to the SuperWomen Slap Game</h1>
+            </div>
+        </div>
+        <div class="row bg-red t-border">
+            <div class="col-xs-12 col-md-12 mb-2 mt-2" >
+                <h1>Attacks and Options: You (<span>Posion Ivy</span>)</h1>
+            </div>
+            <div class="col mb-2 mt-2">
+                <button class="btn btn-danger" onclick="slap()">Slap</button>
+            </div>
+            <div class="col mb-2 mt-2">
+                <button class="btn btn-danger" onclick="punch()">Punch</button>
+            </div>
+            <div class="col mb-2 mt-2">
+                <button class="btn btn-danger" onclick="kick()">Kick</button>
+            </div>
+            <div class="col mb-2 mt-2">
+                <button class="btn btn-warning" onclick="getFire()">Fire</button>
+            </div>
+            <div class="col mb-2 mt-2">
+                <button class="btn btn-warning" onclick="getWater()">Water</button>
+            </div>
+            <div class="col mb-2 mt-2" id="items">
+                <button class="btn btn-warning" onclick="getLava()">Lava</button>
+            </div>
+        </div>
+
+        <div class="row bg-yellow">
+            <div class="col mb-5 mt-5">
+                <img src="//placehold.it/200x200" alt="">
+            </div>
+            <div class="col mb-5 mt-5">
+                <img src="//placehold.it/200x200" alt="">
+            </div>
+        </div>
+        <div class="row bg-red b-border">
+            <div class="col-xs-12 col-md-12 mb-3 mt-3">
+                <h1>Oppnent Stats: Harley Quinn</h1>
+            </div>
+            <div class="col-xs-12 col-md-6">
                 <h1>Health:
                     <span id="health">_</span>
                 </h1>
-                <h1>Name:
-                    <span id="name">Place Holder</span>
-                </h1>
+            </div>
+            <div class="col-xs-12 col-md-6">
                 <h1>Hits:
                     <span id="hits">_</span>
                 </h1>
-            </div>
-            <div class="col">
-                <img src="//placehold.it/200x200" alt="">
-            </div>
-            <div class="col">
-                <button class="btn" onclick="slap()">Slap</button>
-                <button class="btn" onclick="punch()">Punch</button>
-                <button class="btn" onclick="kick()">Kick</button>
-            </div>
-            <div class="col" id="items">
-                <button class="btn" onclick="getItem('fire')">Fire</button>
-                <button class="btn" onclick="getItem('water')">Water</button>
-                <button class="btn" onclick="getItem('lava')">Lava</button>
             </div>
         </div>
     </div>

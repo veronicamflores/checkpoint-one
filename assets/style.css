@@ -1,0 +1,19 @@
+body{
+    background-color:#2e99b0;
+    font-family: 'Pacifico', cursive;
+}
+.bg-yellow{
+    background-color:#fcd77f;
+}
+.bg-red{
+    background-color:#ff2e4c;
+}
+.bg-dark-blue{
+    background-color:#1e1548;
+}
+.b-border{
+    border-bottom: 20px solid #1e1548;
+}
+.t-border{
+    border-top: 20px solid #1e1548;
+}

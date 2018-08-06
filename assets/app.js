@@ -2,7 +2,7 @@ let target = {
     name:'Harley Quinn',
     health: 100,
     hits: 0,
-    items: [],
+    item: [],
     targetImg: ['assets/IMG-0111.PNG', 'assets/IMG-0115.PNG', 'assets/IMG-0116.PNG', 'assets/IMG-0117.PNG']
 }
 
@@ -19,7 +19,7 @@ let user = {
     name: 'Posion Ivy',
     health:100,
     hits: 0,
-    items: [],
+    item: [],
     userImg: ['assets/IMG-0107.PNG', 'assets/IMG-0108.PNG', 'assets/IMG-0109.PNG', 'assets/IMG-0110.PNG']
 }
 
@@ -29,7 +29,8 @@ const targetImg = document.getElementById('harley-quinn')
 const targetName = document.getElementById('target')
 
 function getWater(){
-
+    target.item.push(items.water)
+    addMods()
 }
 function getSun(){
 
@@ -47,6 +48,9 @@ function getPies(){
 
 }
 
+function addMods(){
+    
+}
 // function getFire(){
 //     target.items.push(letItems.fire);
 //     addMods()

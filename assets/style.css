@@ -17,13 +17,13 @@ body{
 .t-border{
     border-top: 20px solid #1e1548;
 }
-
+/* 
 #posion-ivy{
     height:30rem;
 }
 #harley-quinn{
     height:30rem;
-}
+} */
 .bg-center{
     display: flex;
     justify-content: center;

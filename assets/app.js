@@ -7,12 +7,12 @@ let target = {
 }
 
 let items = {
-    water: { name: 'Helping Hand', modifier: -2, description: 'its a slap' },
-    sun: { name: 'Photosynthesis', modifier: -7, description: 'its a punch' },
-    pesticide: {name: 'Opposite of Helping', modifier: 5, description: 'its a kick'},
-    glitter: { name: 'Helping Hand', modifier: -1, description: 'its a slap' },
-    explosives: { name: 'Photosynthesis', modifier: -10, description: 'its a punch' },
-    pies: {name: 'Opposite of Helping', modifier: 6, description: 'its a kick'}
+    water: { name: 'Helping Hand', modifier: 2, description: 'its a slap' },
+    sun: { name: 'Photosynthesis', modifier: 7, description: 'its a punch' },
+    pesticide: {name: 'Opposite of Helping', modifier: -5, description: 'its a kick'},
+    glitter: { name: 'Helping Hand', modifier: 1, description: 'its a slap' },
+    explosives: { name: 'Photosynthesis', modifier: 10, description: 'its a punch' },
+    pies: {name: 'Opposite of Helping', modifier: -6, description: 'its a kick'}
 }
 
 let user = {
@@ -30,85 +30,75 @@ const targetName = document.getElementById('target')
 
 function getWater(){
     target.item.push(items.water)
-    addMods()
+    addMods(target)
 }
 function getSun(){
-
+    target.item.push(items.sun)
+    addMods(target)
 }
 function getPesticide(){
-
+    target.item.push(items.pesticide)
+    addMods(target)
 }
 function getGlitter(){
-
+    user.item.push(items.glitter)
+    addMods(user)
 }
 function getExplosives(){
-
+    user.item.push(items.explosives)
+    addMods(user)
 }
 function getPies(){
-
+    user.item.push(items.pies)
+    addMods(user)
 }
 
-function addMods(){
-    
+function addMods(obj){
+    let totalMods = 0
+    for(let i = 0; i < obj.item.length; i++){
+        let choice = obj.item[i]
+        totalMods += choice.modifier
+    }
+    return totalMods
 }
-// function getFire(){
-//     target.items.push(letItems.fire);
-//     addMods()
-// }
-// function getWater(){
-//  target.items.push(letItems.water);
-//  addMods()
-// }
-// function getLava(){
-//  target.items.push(letItems.lava);
-//  addMods()
-// }
-// function addMods(arr, obj){
-//     let total = 0;
-//     for (let i = 0; i < arr.items.length; i++) {
-//         let item = arr.items[i]
-//         total += item[i][modifier]
-//     }
-//     return total
-// }
 
 function vines() {
-    target.health -= 1
+    target.health -= 1 + addMods(target)
     target.hits++;
     userImg.setAttribute('src', user.userImg[1])
     upDate();
     draw()
 }
 function posion() {
-    target.health -= 5
+    target.health -= 5 + addMods(target)
     target.hits++;
     userImg.setAttribute('src', user.userImg[2])
     upDate();
     draw()
 }
 function pheromone() {
-    target.health -= 10
+    target.health -= 10 + addMods(target)
     target.hits++;
     userImg.setAttribute('src', user.userImg[3])
     upDate();
     draw()
 }
 function confetti() {
-    user.health -= 1
+    user.health -= 1 +addMods(user)
     user.hits++;
     targetImg.setAttribute('src', target.targetImg[1])
     upDate();
     draw()
 }
 function bat() {
-    user.health -= 5
+    user.health -= 5 + addMods(user)
     user.hits++;
     targetImg.setAttribute('src', target.targetImg[3])
     upDate();
     draw()
 }
 function hammer() {
-    user.health -= 10
+    user.health -= 10 + addMods(user)
     user.hits++;
     targetImg.setAttribute('src', target.targetImg[2])
     upDate();
@@ -123,6 +113,7 @@ function upDate() {
         user.health = 100
         user.hits = 0
         userImg.setAttribute('src', user.userImg[0])
+        targetImg.setAttribute('src', target.targetImg[0])
     }
     else if(user.health <= 0){
         alert( `${target.name} Wins!`)
@@ -131,6 +122,7 @@ function upDate() {
         target.health = 100
         target.hits = 0
         targetImg.setAttribute('src', target.targetImg[0])
+        userImg.setAttribute('src', user.userImg[0])
     }  
     document.getElementById('health').innerText = target.health;
     document.getElementById('hits').innerText = target.hits;
@@ -143,7 +135,15 @@ function draw() {
     targetName.innerText = target.name
 }
 
-
+function reset(){
+    user.health = 100
+    user.hits = 0
+    target.health = 100
+    target.hits = 0
+    targetImg.setAttribute('src', target.targetImg[0])
+    userImg.setAttribute('src', user.userImg[0])
+    upDate()
+}
 
 draw()
 upDate();

@@ -28,6 +28,10 @@ const userName = document.getElementById('user')
 const targetImg = document.getElementById('harley-quinn')
 const targetName = document.getElementById('target')
 
+function (){
+    
+}
+
 // function getFire(){
 //     target.items.push(letItems.fire);
 //     addMods()
@@ -48,7 +52,6 @@ const targetName = document.getElementById('target')
 //     }
 //     return total
 // }
-
 
 function vines() {
     target.health -= 1
@@ -115,20 +118,13 @@ function upDate() {
     document.getElementById('user-health').innerText = user.health;
     document.getElementById('user-hits').innerText = user.hits;
 
-    if (target.health >= 75) {
-        targetImg.setAttribute('src', target.targetImg[0])
-    } else if (target.health >= 50) {
-        targetImg.setAttribute('src', target.targetImg[1])
-    } else if (target.health >= 25) {
-        targetImg.setAttribute('src', target.targetImg[2])
-    } else if (target.health >= 5) {
-        targetImg.setAttribute('src', target.targetImg[3])
-    }
 }
 function draw() {
     userName.innerText = user.name
     targetName.innerText = target.name
 }
+
+
 
 draw()
 upDate();

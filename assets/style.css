@@ -29,3 +29,8 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.wrap-around{
+    display: flex;
+    flex-wrap: wrap;
+}

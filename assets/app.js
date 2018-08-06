@@ -3,10 +3,10 @@ let target = {
     health: 100,
     hits: 0,
     items: [],
-    targetImg: ['assets/IMG-0111.PNG', 'assets/IMG-0112.PNG', 'assets/IMG-0114.PNG', 'assets/IMG-0113.PNG']
+    targetImg: ['assets/IMG-0111.PNG', 'assets/IMG-0115.PNG', 'assets/IMG-0116.PNG', 'assets/IMG-0117.PNG']
 }
 
-let letItems = {
+let items = {
     water: { name: 'Helping Hand', modifier: -2, description: 'its a slap' },
     sun: { name: 'Photosynthesis', modifier: -7, description: 'its a punch' },
     pesticide: {name: 'Opposite of Helping', modifier: 5, description: 'its a kick'},
@@ -28,8 +28,23 @@ const userName = document.getElementById('user')
 const targetImg = document.getElementById('harley-quinn')
 const targetName = document.getElementById('target')
 
-function (){
-    
+function getWater(){
+
+}
+function getSun(){
+
+}
+function getPesticide(){
+
+}
+function getGlitter(){
+
+}
+function getExplosives(){
+
+}
+function getPies(){
+
 }
 
 // function getFire(){
@@ -77,21 +92,21 @@ function pheromone() {
 function confetti() {
     user.health -= 1
     user.hits++;
-    targetImg.setAttribute('src', target.targetImg[0])
+    targetImg.setAttribute('src', target.targetImg[1])
     upDate();
     draw()
 }
 function bat() {
     user.health -= 5
     user.hits++;
-    targetImg.setAttribute('src', target.targetImg[0])
+    targetImg.setAttribute('src', target.targetImg[3])
     upDate();
     draw()
 }
 function hammer() {
     user.health -= 10
     user.hits++;
-    targetImg.setAttribute('src', target.targetImg[0])
+    targetImg.setAttribute('src', target.targetImg[2])
     upDate();
     draw()
 }

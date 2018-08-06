@@ -33,18 +33,18 @@ let letItems = {
 // }
 
 
-function slap(){
+function vines(){
     target.health -= 1
     
     target.hits++;
     upDate();
 }
-function punch(){
+function posion(){
     target.health -= 5
     target.hits++;
     upDate();
 }
-function kick(){
+function pheromone(){
     target.health -= 10
     target.hits++;
     upDate();

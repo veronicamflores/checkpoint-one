@@ -1,7 +1,8 @@
 let target = {
     health: 100,
     hits: 0,
-    items: []
+    items: [],
+    targetImg:['', '', '', '']
 }
 
 let letItems = {
@@ -11,6 +12,11 @@ let letItems = {
     }
 }
 
+let user = {
+    name:'Posion Ivy',
+    items:[],
+    userImg:['assets/IMG-0107.PNG', 'assets/IMG-0108.PNG', 'assets/IMG-0109.PNG', 'assets/IMG-0110.PNG']
+}
 // function getFire(){
 //     target.items.push(letItems.fire);
 //     addMods()

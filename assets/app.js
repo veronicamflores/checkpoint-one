@@ -100,7 +100,7 @@ function bat() {
 function hammer() {
     user.health -= 10 + addMods(user)
     user.hits++;
-    targetImg.setAttribute('src', target.targetImg[2])
+    targetImg.setAttribute('src', target.targetImg[2])  
     upDate();
     draw()
 }
@@ -128,6 +128,8 @@ function upDate() {
     document.getElementById('hits').innerText = target.hits;
     document.getElementById('user-health').innerText = user.health;
     document.getElementById('user-hits').innerText = user.hits;
+    user.item.length = 0
+    target.item.length = 0
 
 }
 function draw() {
@@ -142,6 +144,8 @@ function reset(){
     target.hits = 0
     targetImg.setAttribute('src', target.targetImg[0])
     userImg.setAttribute('src', user.userImg[0])
+    target.item.length = 0
+    user.item.length = 0
     upDate()
 }
 

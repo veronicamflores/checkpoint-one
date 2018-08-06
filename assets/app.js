@@ -2,21 +2,26 @@ let target = {
     health: 100,
     hits: 0,
     items: [],
-    targetImg:['', '', '', '']
+    targetImg: ['assets/IMG-0111.PNG', 'assets/IMG-0112.PNG', 'assets/IMG-0114.PNG', 'assets/IMG-0113.PNG']
 }
 
 let letItems = {
-    fire:{name: 'Fire Hands', modifier: 2, description: 'its a slap'},
-    water: {name: 'Water Waves', modifier: 5, description: 'its a punch'},
-    lava: {name: 'Lava You Pretty Dead', modifier: 10, description: 'its a kick'
+    water: { name: 'Helping Hand', modifier: -2, description: 'its a slap' },
+    sun: { name: 'Photosynthesis', modifier: -7, description: 'its a punch' },
+    pesticide: {
+        name: 'Opposite of Helping', modifier: 5, description: 'its a kick'
     }
 }
 
 let user = {
-    name:'Posion Ivy',
-    items:[],
-    userImg:['assets/IMG-0107.PNG', 'assets/IMG-0108.PNG', 'assets/IMG-0109.PNG', 'assets/IMG-0110.PNG']
+    name: 'Posion Ivy',
+    items: [],
+    userImg: ['assets/IMG-0107.PNG', 'assets/IMG-0108.PNG', 'assets/IMG-0109.PNG', 'assets/IMG-0110.PNG']
 }
+
+const userImg = document.getElementById('posion-ivy')
+const userName = document.getElementById('user')
+const targetImg = document.getElementById('harley-quinn')
 // function getFire(){
 //     target.items.push(letItems.fire);
 //     addMods()
@@ -39,33 +44,54 @@ let user = {
 // }
 
 
-function vines(){
+function vines() {
     target.health -= 1
-    
     target.hits++;
+    userImg.setAttribute('src', user.userImg[1])
     upDate();
+    draw()
 }
-function posion(){
+function posion() {
     target.health -= 5
     target.hits++;
+    userImg.setAttribute('src', user.userImg[2])
     upDate();
+    draw()
 }
-function pheromone(){
+function pheromone() {
     target.health -= 10
     target.hits++;
+    userImg.setAttribute('src', user.userImg[3])
     upDate();
+    draw()
 }
 
-
-function upDate(){
-    if(target.health <= 0){
+function upDate() {
+    if (target.health <= 0) {
         alert("You Win")
         target.health = 100
         target.hits = 0
+        userImg.setAttribute('src', user.userImg[0])
     }
     document.getElementById('health').innerText = target.health;
     document.getElementById('hits').innerText = target.hits;
-    
+    if (target.health >= 75) {
+        targetImg.setAttribute('src', target.targetImg[0])
+    } else if (target.health >= 50) {
+        targetImg.setAttribute('src', target.targetImg[1])
+    } else if (target.health >= 25) {
+        targetImg.setAttribute('src', target.targetImg[2])
+    } else if (target.health >= 5) {
+        targetImg.setAttribute('src', target.targetImg[3])
+    }
+}
+function draw() {
+    userName.innerText = user.name
+
+}
+function targetImage() {
+
 }
 
+draw()
 upDate();

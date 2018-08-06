@@ -24,3 +24,8 @@ body{
 #harley-quinn{
     height:40rem;
 }
+.bg-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
